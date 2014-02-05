@@ -45,7 +45,7 @@ def get_api_data():
 def index():
     items = list()
     api_response = get_api_data()
-    print api_response
+
     if api_response:
         for item in api_response["video"]["RTMP"]:
             items.append(dict(label=item["label"], path=item["url"],
