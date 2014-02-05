@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addons>
+<addon id="plugin.video.tvrain.subscription" name="Телеканал ДОЖДЬ" version="0.1" provider-name="Oleg Larin (k_z)">
+  <requires>
+    <import addon="xbmc.python" version="2.1.0"/>
+    <import addon="script.module.xbmcswift2" version="2.4.0"/>
+  </requires>
+  <extension point="xbmc.python.pluginsource" library="addon.py">
+    <provides>video</provides>
+  </extension>
+  <extension point="xbmc.addon.metadata">
+    <platform>all</platform>
+    <language></language>
+    <summary>Телеканал ДОЖДЬ</summary>
+    <description>Независимый информационный телеканал. Это каждый час новости о том, что происходит на самом деле; аналитика, круглые столы, авторские программы, документальные фильмы, живая музыка, социальные проекты и эксперименты.</description>
+  </extension>
+</addon>
+</addons>

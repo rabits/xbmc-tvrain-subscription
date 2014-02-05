@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <!-- Plugin name -->
+    <string id="30000">Телеканал Дождь</string>
+    <string id="32001">Аккаунт</string>
+    <string id="32011">E-mail</string>
+    <string id="32012">Пароль</string>
+    <string id="32042">Неверный логин или пароль</string>
+    <string id="32043">Страница не найдена</string>
+    <string id="32044">Аддон не настроен. Логин или пароль не указаны</string>
+    <string id="32045">Вы не подписаны на канал</string>
+    <string id="32046">Ошибка</string>
+</strings>

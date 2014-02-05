@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<strings>
+    <!-- Plugin name -->
+    <string id="30000">Телеканал Дождь</string>
+    <string id="32001">Credentials</string>
+    <string id="32011">E-mail</string>
+    <string id="32012">Password</string>
+    <string id="32042">Wrong E-mail/password</string>
+    <string id="32043">Page not found</string>
+    <string id="32044">Add-on is not configured. (Empty E-mail/password)</string>
+    <string id="32045">You are not subscribed channel</string>
+    <string id="32046">Error</string>
+</strings>
