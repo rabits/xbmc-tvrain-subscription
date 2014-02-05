@@ -31,7 +31,7 @@ def display_error(message, title=None):
     dialog = xbmcgui.Dialog()
     dialog.ok(title, message)
 
-@plugin.cached(TTL=2*60*24)
+@plugin.cached(TTL=60*24)
 def get_api_data():
     client = TvRainClient(plugin)
     data = list()
