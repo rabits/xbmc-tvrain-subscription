@@ -46,7 +46,7 @@ def index():
     api_response = get_api_data()
 
     if api_response:
-        videos = ("RTMP", "HLS_SMARTTV")
+        videos = ("HLS_SMARTTV", "RTMP")
         for video in videos:
             for item in api_response["video"][video]:
                 items.append(dict(label=item["label"], path=item["url"],
