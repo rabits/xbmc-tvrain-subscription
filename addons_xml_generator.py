@@ -86,12 +86,9 @@ class Generator:
  
     def _generate_md5_file( self ):
         # create a new md5 hash
-        try:
-            import md5
-            m = md5.new( open( "addons.xml", "r" ).read() ).hexdigest()
-        except ImportError:
-            import hashlib
-            m = hashlib.md5( open( "addons.xml", "r", encoding="UTF-8" ).read().encode( "UTF-8" ) ).hexdigest()
+        from hashlib import md5
+        with open("addons.xml", "r" ) as dhandler:
+            m = md5(dhandler.read()).hexdigest()
  
         # save file
         try:
