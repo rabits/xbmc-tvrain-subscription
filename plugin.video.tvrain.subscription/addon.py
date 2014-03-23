@@ -31,7 +31,6 @@ def display_error(message, title=None):
     dialog = xbmcgui.Dialog()
     dialog.ok(title, message)
 
-@plugin.cached(TTL=60*4)
 def get_api_data():
     client = TvRainClient(plugin)
     data = list()
@@ -47,9 +46,11 @@ def index():
     api_response = get_api_data()
 
     if api_response:
-        for item in api_response["video"]["RTMP"]:
-            items.append(dict(label=item["label"], path=item["url"],
-                              is_playable=True))
+        videos = ("RTMP", "HLS_SMARTTV")
+        for video in videos:
+            for item in api_response["video"][video]:
+                items.append(dict(label=item["label"], path=item["url"],
+                                  is_playable=True))
     return items
 
 
