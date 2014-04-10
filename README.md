@@ -5,7 +5,7 @@ xbmc-tvrain-subscription
 Установка
 ---------
 
-* Скачайте архив (<https://github.com/olarin/xbmc-tvrain-subscription/raw/master/repository.tvrain.subscription.plugin.1.0.1.zip>) и установите в XBMC (Settings -> Add-ons -> Install from zip file).
+* Скачайте архив (<http://olarin.github.io/xbmc-tvrain-subscription/repository.tvrain.subscription.plugin.1.0.1.zip>) и установите в XBMC (Settings -> Add-ons -> Install from zip file).
 * Установите плагин (Settings -> Add-ons -> Get Add-ons).
 * В настройках плагина укажите e-mail/пароль от <http://tvrain.ru>
 
