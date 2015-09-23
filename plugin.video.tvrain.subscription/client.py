@@ -35,8 +35,8 @@ class TvRainClient(object):
 
     def __init__(self, plugin):
         self.plugin = plugin
-        self.streams_url = "http://tvrain.ru/api/live/streams/"
-        self.login_url = "http://tvrain.ru/login/"
+        self.streams_url = "https://tvrain.ru/api/live/streams/"
+        self.login_url = "https://tvrain.ru/login/"
 
     def get_feed(self):
         opener = self.get_opener()
