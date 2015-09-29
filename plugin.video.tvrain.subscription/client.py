@@ -35,7 +35,7 @@ class TvRainClient(object):
 
     def __init__(self, plugin):
         self.plugin = plugin
-        self.streams_url = "https://tvrain.ru/api/live/streams/"
+        self.streams_url = "https://api.tvrain.ru/api_v2/live/"
         self.login_url = "https://tvrain.ru/login/"
 
     def get_feed(self):
@@ -50,7 +50,7 @@ class TvRainClient(object):
             elif err.code == 402:
                 error_msg = self.plugin.get_string(self.ERROR_NO_SUBSCRIPTION)
             else:
-                error_msg = "Unknown error. Error code %s" % err.code
+                error_msg = "Unknown remote server error. Error code %s" % err.code
             raise self.ClientError(error_msg)
         data = json.loads(response.read())
         return data
@@ -58,20 +58,14 @@ class TvRainClient(object):
     def get_opener(self):
         cookie_jar = cookielib.MozillaCookieJar()
         opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(cookie_jar))
-        opener.addheaders = [('User-Agent', ('Mozilla/5.0 (Macintosh; Intel '
-                                             'Mac OS X 10_9_1) '
-                                             'AppleWebKit/537.36 (KHTML, '
-                                             'like Gecko) Chrome/32.0.1700.107 '
-                                             'Safari/537.36')),
-                             ('Accept', ('text/html,application/xhtml+xml,'
-                                         'application/xml;q=0.9,image/webp,'
-                                         '*/*;q=0.8')),
-                             ('Accept-Language', ('ru-RU,ru;q=0.8,en-US;q=0.6,'
-                                                  'en;q=0.4')),
+        opener.addheaders = [('X-User-Agent', 'TV Client (Browser); API_CONSUMER_KEY=a908545f-80af-4f99-8dac-fb012cec'),
+                             ('Accept', 'application/tvrain.api.2.8+json'),
+                             ('Accept-Language', 'ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3'),
                              ('Accept-Charset', 'utf-8, utf-16, *;q=0.1'),
                              ('Accept-Encoding', 'plain'),
-                             ('Cache-Control', 'max-age=0'),
-                             ('Connection', 'Keep-Alive'),
+                             ('X-Result-Define-Thumb-Width', '200'),
+                             ('X-Result-Define-Thumb-height', '110'),
+                             ('Connection', 'keep-alive'),
                              ('Origin', 'http://tvrain.ru'),
                              ('Referer', 'http://tvrain.ru/')]
 
